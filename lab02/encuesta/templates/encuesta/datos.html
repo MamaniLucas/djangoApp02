@@ -1,0 +1,36 @@
+<h2>{{ titulo }}</h2>
+
+
+
+<form action="{% url 'encuesta:enviard' %}" method="post">
+    
+    {% csrf_token %}
+    <br>
+    <label for="tentacles">valor 1:</label>
+    <input type="number" id="tentacles" name="num1"
+        min="1" max="100">
+
+   <br><br>
+    <select name="opcion">
+            <option value="sum">suma</option>
+            <option value="res" selected="select">Resta</option>
+            <option value="mult">Multiplicacion</option>
+            <option value="Div">Division</option>
+    </select><br><br>
+    
+    <label for="tentacles">valor 2:</label>
+    <input type="number" id="tentacles" name="num2"
+            min="1" max="100"><br>
+
+
+    <br>
+<br>
+    <button type="text"> Calcular </button>
+    <input type="reset" name="borrar" value="Limpiar" /><br>
+    <br>
+    <label>Output</label>
+    <input type="text" name="submit" value="{{c}}">
+    
+    
+
+</form>
